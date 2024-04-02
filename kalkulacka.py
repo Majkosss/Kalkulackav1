@@ -7,10 +7,13 @@ def kalkulacka():
         num1 = float(input("Vložte první číslo: "))
         result = num1
         while True:
-            operator = input("Vložte operátora (+, -, *, /) nebo 'konec' pro výpočet výsledku: ")
+            operator = input("Vložte operátora (+, -, *, /, mocnina, odmocnina) nebo 'konec' pro výpočet výsledku: ")
             
             if operator == "konec":
                 break
+            
+            if operator == "odmocnina":
+                result = math.sqrt(result)
             else:
                 num2 = float(input("Vložte další číslo: "))
                 
@@ -22,6 +25,8 @@ def kalkulacka():
                     result *= num2
                 elif operator == "/":
                     result /= num2
+                elif operator == "mocnina":
+                    result **= num2
                 else:
                     print("Tenhle operátor není podporován.")
                     continue
